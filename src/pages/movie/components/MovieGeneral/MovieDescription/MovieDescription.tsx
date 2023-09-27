@@ -1,8 +1,8 @@
 import { Divider, Stack, Typography } from "@mui/material";
-import { getImagePath } from "../../../../helpers/apiTmdb/apiTmdb.tsx";
+import { getImagePath } from "../../../../../helpers/apiTmdb/apiTmdb.tsx";
 import { buildStyles, CircularProgressbar } from "react-circular-progressbar";
 import { useMediaQuery } from "react-responsive";
-import MovieImages from "../MovieImages";
+import MovieImages from "../../MovieImages";
 
 const formatDate = (inputDate): string => {
   const date = new Date(inputDate);
@@ -38,7 +38,7 @@ const MovieDescription = ({ movie }) => {
       <img
         src={getImagePath(movie["poster_path"])}
         style={{
-          width: "300px",
+          width: isTabletOrMobile ? "200px" : "300px",
           borderRadius: "20px",
         }}
       />

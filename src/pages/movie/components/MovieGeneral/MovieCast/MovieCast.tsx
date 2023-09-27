@@ -1,5 +1,5 @@
 import { Stack, Typography } from "@mui/material";
-import CastPerson from "../CastPerson";
+import CastPerson from "./CastPerson";
 import SimpleBar from "simplebar-react";
 import { Scrollbars } from "react-custom-scrollbars";
 

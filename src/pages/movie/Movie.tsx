@@ -1,7 +1,5 @@
 import { useSearchParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import axiosTmdb from "../../axiosTmdb";
-import { responsiveFontSizes, Stack } from "@mui/material";
 import {
   getMovieById,
   getImagePath,

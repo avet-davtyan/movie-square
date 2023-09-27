@@ -1,7 +1,7 @@
 import { Stack } from "@mui/material";
-import MovieDescription from "../MovieDescription";
+import MovieDescription from "./MovieDescription";
 import { Scrollbars } from "react-custom-scrollbars";
-import MovieCast from "../MovieCast";
+import MovieCast from "./MovieCast";
 
 const MovieGeneral = ({ movie, movieCast }) => {
   console.log("movieCast", movieCast);

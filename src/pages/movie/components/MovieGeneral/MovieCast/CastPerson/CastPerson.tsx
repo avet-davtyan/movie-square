@@ -1,5 +1,5 @@
 import { Stack, Typography } from "@mui/material";
-import { getImagePath } from "../../../../helpers/apiTmdb/apiTmdb.tsx";
+import { getImagePath } from "../../../../../../helpers/apiTmdb/apiTmdb.tsx";
 import { useState } from "react";
 
 const CastPerson = ({ castPerson }) => {
