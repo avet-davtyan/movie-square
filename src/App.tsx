@@ -1,5 +1,3 @@
-import axiosTmdb from "./axiosTmdb";
-import { useEffect } from "react";
 import Movie from "./pages/movie";
 
 import {

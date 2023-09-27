@@ -1,3 +1,3 @@
-import Movie from "./movie.tsx";
+import Movie from "./Movie.tsx";
 
 export default Movie;
