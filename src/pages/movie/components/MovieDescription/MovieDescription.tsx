@@ -1,6 +1,7 @@
 import { Divider, Stack, Typography } from "@mui/material";
 import { getImagePath } from "../../../../helpers/apiTmdb/apiTmdb.tsx";
 import { buildStyles, CircularProgressbar } from "react-circular-progressbar";
+import { useMediaQuery } from "react-responsive";
 import MovieImages from "../MovieImages";
 
 const formatDate = (inputDate): string => {
@@ -16,6 +17,8 @@ const formatDate = (inputDate): string => {
 const MovieDescription = ({ movie }) => {
   console.log(movie);
 
+  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1224px)" });
+
   const voteAverage: number = Math.floor(movie["vote_average"] * 10);
   const genres = movie["genres"];
   const releaseDate = movie["release_date"];
@@ -28,8 +31,9 @@ const MovieDescription = ({ movie }) => {
         mb: 5,
       }}
       spacing={10}
-      direction="row"
+      direction={isTabletOrMobile ? "column" : "row"}
       alignItems={"center"}
+      justifyContent="center"
     >
       <img
         src={getImagePath(movie["poster_path"])}
@@ -44,7 +48,7 @@ const MovieDescription = ({ movie }) => {
             sx={{
               fontWeight: "bold",
               color: "white",
-              fontSize: "80px",
+              fontSize: isTabletOrMobile ? "60px" : "80px",
             }}
           >
             {movie["original_title"]}
@@ -100,7 +104,7 @@ const MovieDescription = ({ movie }) => {
         <Typography sx={{ color: "white", fontSize: "25px", mb: 2 }}>
           Overview
         </Typography>
-        <Stack sx={{ width: "40%" }}>
+        <Stack sx={{ width: isTabletOrMobile ? "100%" : "40%" }}>
           <Typography sx={{ color: "white", opacity: "70%" }}>
             {movie["overview"]}
           </Typography>
