@@ -20,7 +20,7 @@ function App() {
         <Router>
           <Routes>
             <Route path={"/"} element={<h1>main</h1>} />
-            <Route path={"/movie"} element={<Movie />} />
+            <Route path={"/movie/:id"} element={<Movie />} />
           </Routes>
         </Router>
       </ScreenContext.Provider>

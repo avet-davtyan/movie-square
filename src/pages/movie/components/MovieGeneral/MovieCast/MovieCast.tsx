@@ -3,23 +3,19 @@ import CastPerson from "./CastPerson";
 import SimpleBar from "simplebar-react";
 import { Scrollbars } from "react-custom-scrollbars";
 
-const styles = {
-  maxWidth: 2000,
-  width: "100%",
-  maxHeight: 200,
-  height: "100%",
-};
-
 const MovieCast = ({ movieCast }) => {
   return (
     <Stack
       sx={{
         position: "relative",
         width: "100%",
+        backgroundColor: "rgba(0,0,0,0.3)",
+        borderRadius: "20px",
       }}
-      spacing={2}
     >
-      <Typography sx={{ color: "white", fontSize: "30px" }}>Cast</Typography>
+      <Typography sx={{ color: "white", fontSize: "30px", margin: "20px" }}>
+        Cast
+      </Typography>
 
       <Stack
         sx={{
@@ -29,7 +25,7 @@ const MovieCast = ({ movieCast }) => {
         }}
       >
         <Scrollbars>
-          <Stack direction="row" spacing={3}>
+          <Stack direction="row" spacing={3} sx={{ marginLeft: "20px" }}>
             {movieCast &&
               movieCast.map((castPerson: any) => (
                 <CastPerson

@@ -1,9 +1,10 @@
-import { Stack } from "@mui/material";
+import { Divider, Stack } from "@mui/material";
 import MovieDescription from "./MovieDescription";
 import { Scrollbars } from "react-custom-scrollbars";
 import MovieCast from "./MovieCast";
+import MovieReviews from "../MovieReviews";
 
-const MovieGeneral = ({ movie, movieCast }) => {
+const MovieGeneral = ({ movie, movieCast, movieReviews }) => {
   console.log("movieCast", movieCast);
   return (
     <Stack
@@ -21,6 +22,7 @@ const MovieGeneral = ({ movie, movieCast }) => {
       <Scrollbars autoHide>
         <MovieDescription movie={movie} />
         <MovieCast movieCast={movieCast} />
+        <MovieReviews movieReviews={movieReviews} />
       </Scrollbars>
     </Stack>
   );
