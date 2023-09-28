@@ -6,6 +6,7 @@ import {
 } from "../../helpers/apiTmdb/apiTmdb.tsx";
 import BackDrop from "./components/BackDrop";
 import PersonGeneral from "./components/PersonGeneral";
+import PageLoading from "../../components/PageLoading";
 
 const Person = () => {
   const params = useParams();
@@ -16,9 +17,11 @@ const Person = () => {
   const [person, setPerson] = useState(null);
 
   useEffect(() => {
-    getPersonById(personId).then((response) => {
-      setPerson(response.data);
-    });
+    getPersonById(personId)
+      .then((response) => {
+        setPerson(response.data);
+      })
+      .finally(() => setLoading(false));
     getMovieCredits(personId).then((response) => {
       setMovieCredits(response.data);
     });
@@ -32,6 +35,7 @@ const Person = () => {
           <PersonGeneral person={person} movieCredits={movieCredits} />
         </>
       )}
+      <PageLoading loading={loading} />
     </>
   );
 };
