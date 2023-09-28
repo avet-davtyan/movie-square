@@ -9,14 +9,12 @@ const MovieGeneral = ({ movie, movieCast, movieReviews }) => {
   return (
     <Stack
       sx={{
+        width: "70%",
+        height: "calc(100% - 100px)",
+        top: "100px",
         position: "absolute",
         left: "50%",
         transform: "translate(-50%, 0%)",
-        width: "70%",
-        height: "calc(100% - 100px)",
-        boxSizing: "border-box",
-        overflow: "hidden",
-        top: "100px",
       }}
     >
       <Scrollbars autoHide>

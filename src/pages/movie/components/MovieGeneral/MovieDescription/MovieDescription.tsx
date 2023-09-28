@@ -42,6 +42,7 @@ const MovieDescription = ({ movie }) => {
           borderRadius: "20px",
         }}
       />
+
       <Stack style={{}}>
         <Stack>
           <Typography
@@ -104,7 +105,7 @@ const MovieDescription = ({ movie }) => {
         <Typography sx={{ color: "white", fontSize: "25px", mb: 2 }}>
           Overview
         </Typography>
-        <Stack sx={{ width: isTabletOrMobile ? "100%" : "40%" }}>
+        <Stack sx={{ width: isTabletOrMobile ? "100%" : "70%" }}>
           <Typography sx={{ color: "white", opacity: "70%" }}>
             {movie["overview"]}
           </Typography>

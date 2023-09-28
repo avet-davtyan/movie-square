@@ -1,10 +1,10 @@
 .searchField {
-    
+
     cursor: text;
     font-size: 14px;
     line-height: 20px;
     padding: 0 16px;
-    height: 48px;
+    height: 30px;
     background-color: #fff;
     border: none;
     border-radius: 100px;
