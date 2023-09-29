@@ -12,6 +12,10 @@ export const getMovieImages = (movieId: number) => {
   return axiosTmdb.get(`/movie/${movieId}/images`);
 };
 
+export const getPlayingMovies = (page: number = 1) => {
+  return axiosTmdb.get(`/movie/now_playing?language=en-US&page=${page}`);
+};
+
 export const getMovieCast = (movieId: number) => {
   return axiosTmdb.get(`/movie/${movieId}/credits?language=en-US`);
 };

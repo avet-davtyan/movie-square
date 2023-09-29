@@ -25,7 +25,14 @@ const PersonMovies = ({ personMovies }) => {
         }}
       >
         <Scrollbars>
-          <Stack direction="row" spacing={3} sx={{ marginLeft: "20px" }}>
+          <Stack
+            direction="row"
+            spacing={3}
+            sx={{ marginLeft: "20px" }}
+            onClick={() => {
+              console.log(castMovies);
+            }}
+          >
             {castMovies &&
               castMovies.map((movie) => (
                 <MovieCard movie={movie} key={movie["id"]} />

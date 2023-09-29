@@ -10,6 +10,7 @@ import {
 } from "react-router-dom";
 import Layout from "./components/Layout";
 import Person from "./pages/person";
+import Home from "./pages/home";
 
 export const ScreenContext = createContext(null);
 
@@ -22,7 +23,7 @@ function App() {
         <Router>
           <Routes>
             <Route path={"/"} element={<Layout />}>
-              <Route index element={<h1>main</h1>} />
+              <Route index element={<Home />} />
               <Route path={"/movie/:id"} element={<Movie />} />
               <Route path={"/person/:id"} element={<Person />} />
             </Route>

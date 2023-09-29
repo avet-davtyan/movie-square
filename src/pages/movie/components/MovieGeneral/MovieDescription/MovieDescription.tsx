@@ -49,7 +49,7 @@ const MovieDescription = ({ movie }) => {
             sx={{
               fontWeight: "bold",
               color: "white",
-              fontSize: isTabletOrMobile ? "60px" : "80px",
+              fontSize: isTabletOrMobile ? "30px" : "50px",
             }}
           >
             {movie["original_title"]}
@@ -69,38 +69,44 @@ const MovieDescription = ({ movie }) => {
               {genre["name"]}
             </Typography>
           ))}
+
           <Divider orientation="vertical" sx={{ borderColor: "white" }} />
+
           <Typography sx={{ color: "white" }}>
             {formatDate(releaseDate)}
           </Typography>
         </Stack>
-        <Stack
-          sx={{
-            height: "60px",
-            width: "60px",
-            position: "relative",
-            mb: 3,
-          }}
-        >
-          <CircularProgressbar
-            value={voteAverage}
-            strokeWidth={10}
-            styles={buildStyles({
-              pathColor: "#14BB39",
-              pathTransitionDuration: 0.5,
-            })}
-          />
-          <Typography
-            style={{
-              position: "absolute",
-              left: "50%",
-              top: "50%",
-              transform: "translate(-50%,-50%)",
-              margin: "0",
-              color: "white",
-              fontSize: "12px",
+        <Stack direction="row" spacing={2} sx={{ mb: 3 }} alignItems="center">
+          <Stack
+            sx={{
+              height: "60px",
+              width: "60px",
+              position: "relative",
             }}
-          >{`${voteAverage}%`}</Typography>
+          >
+            <CircularProgressbar
+              value={voteAverage}
+              strokeWidth={10}
+              styles={buildStyles({
+                pathColor: "#14BB39",
+                pathTransitionDuration: 0.5,
+              })}
+            />
+            <Typography
+              style={{
+                position: "absolute",
+                left: "50%",
+                top: "50%",
+                transform: "translate(-50%,-50%)",
+                margin: "0",
+                color: "white",
+                fontSize: "12px",
+              }}
+            >{`${voteAverage}%`}</Typography>
+          </Stack>
+          <Typography sx={{ color: "white", opacity: "50%" }}>
+            User Score
+          </Typography>
         </Stack>
         <Typography sx={{ color: "white", fontSize: "25px", mb: 2 }}>
           Overview
